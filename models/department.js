@@ -6,7 +6,7 @@ const departmentSchema = new mongoose.Schema({
         required : true
     },
     dno :{
-        type: Number,
+        type: String,
         required : true
     }
 

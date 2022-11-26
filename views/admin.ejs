@@ -1,334 +1,374 @@
-<link rel="stylesheet" href="/css/user.css">
+<link rel="stylesheet" href="/css/user.css" />
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary user">
-   
-  
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active listi">
-          <a class="nav-link linkl" href="/admin/home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item listi">
-          <a class="nav-link linkl" href="/admin/employees">Employees</a>
-        </li>
-        <li class="nav-item listi">
-          <a class="nav-link linkl" href="/admin/transactions">Transactions</a>
-        </li>
-        <li class="nav-item listi">
-          <a class="nav-link linkl" href="/admin/history">History</a>
-        </li>
-        <li class="nav-item listi">
-          <a class="nav-link linkl" href="/admin/attendence">Attendence</a>
-        </li>
-        <li class="nav-item listi">
-          <a class="nav-link linkl" href="/">Sign out</a>
-        </li>
-      </ul>
-      
-    </div>
-  </nav>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active listi">
+        <a class="nav-link linkl" href="/admin/home"
+          >Add Employee <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item listi">
+        <a class="nav-link linkl" href="/admin/employees">Employees</a>
+      </li>
+      <li class="nav-item listi">
+        <a class="nav-link linkl" href="/admin/transactions">Transactions</a>
+      </li>
+      <li class="nav-item listi">
+        <a class="nav-link linkl" href="/admin/history">History</a>
+      </li>
+      <li class="nav-item listi">
+        <a class="nav-link linkl" href="/admin/attendence">Attendence</a>
+      </li>
+      <li class="nav-item listi">
+        <a class="nav-link linkl" href="/">Sign out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-  <div class="row mt-5">
-      <div class="col-md-6 m-auto">
-        <div class="card card-body">
-          <h1 class="text-center mb-3">
-            <i class="fas fa-user-plus"></i> Register Employee
-          </h1>
-          <%-include('messages')%>
-          <form action="/admin/register" method="POST">
-          <div>
-            <h3>Login Details</h3>
-          </div>  
-            <div class="form-group">
-                <label for="uname">User Name</label>
-                <input
-                  type="text"
-                  id="uname"
-                  name="uname"
-                  class="form-control"
-                  placeholder="Enter User Name"
-                  value="<%= typeof email != 'undefined' ? email : '' %>"
-                />
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="form-control"
-                  placeholder="Create Password"
-                  value="<%= typeof password != 'undefined' ? password : '' %>"
-                  required
-                />
-              </div>
-            <div>
-                  <h3>Personal Detail</h3>
-            </div>  
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input
-                type="name"
-                id="name"
-                name="name"
-                class="form-control"
-                placeholder="Enter Name"
-                value="<%= typeof name != 'undefined' ? name : '' %>"
-                required
-              />
-            </div>
-            <div class="form-group">
-                <label for="eid">Employee Id.</label>
-                <input
-                  type="number"
-                  id="eid"
-                  name="eid"
-                  class="form-control"
-                  placeholder="Enter EId."
-                  value="<%= typeof name != 'undefined' ? name : '' %>"
-                  required
-                  />
-              </div>
-              <div class="form-group">
-                  <label for="gender">Gender</label>
-                  <input
-                    type="text"
-                    id="gender"
-                    name="gender"
-                    class="form-control"
-                    placeholder="Enter Gender"
-                    value="<%= typeof name != 'undefined' ? name : '' %>"
-                    required
-                    />
-                </div> 
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input
-                      type="date"
-                      id="dob"
-                      name="dob"
-                      class="form-control"
-                      placeholder="Enter Date of Birth"
-                      value="<%= typeof name != 'undefined' ? name : '' %>"
-                      required
-                      />
-                  </div> 
-                <div class="form-group">
-                    <label for="doj">Date of Joining</label>
-                    <input
-                      type="date"
-                      id="doj"
-                      name="doj"
-                      class="form-control"
-                      placeholder="Enter Date of Joining"
-                      value="<%= typeof name != 'undefined' ? name : '' %>"
-                      required
-                      />
-                  </div> 
-                  <div class="form-group">
-                      <label for="phone">Phone No.</label>
-                      <input
-                        type="number"
-                        id="phone"
-                        name="phone"
-                        class="form-control"
-                        placeholder="Enter Phone"
-                        value="<%= typeof name != 'undefined' ? name : '' %>"
-                        required
-                        />
-                    </div> 
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input
-                          type="text"
-                          id="address"
-                          name="address"
-                          class="form-control"
-                          placeholder="Enter Address"
-                          value="<%= typeof name != 'undefined' ? name : '' %>"
-                          required
-                          />
-
-                      </div>
-                      <div class="form-group">
-                          <label for="dno">Department No.</label>
-                          <input
-                            type="number"
-                            id="dno"
-                            name="dno"
-                            class="form-control"
-                            placeholder="Enter Department No."
-                            value="<%= typeof name != 'undefined' ? name : '' %>"
-                            required
-                            />
-                        </div>   
-                        <div class="form-group">
-                            <label for="designation">Designation</label>
-                            <input
-                              type="text"
-                              id="designation"
-                              name="designation"
-                              class="form-control"
-                              placeholder="Enter Designation"
-                              value="<%= typeof name != 'undefined' ? name : '' %>"
-                              required
-                              />
-                          </div>
-                          <div>
-                              <h3>Salary</h3>
-                            </div>        
-                          <div class="form-group">
-                              <label for="sid">Salary Id.</label>
-                              <input
-                                type="number"
-                                id="sid"
-                                name="sid"
-                                class="form-control"
-                                placeholder="Enter SId."
-                                value="<%= typeof name != 'undefined' ? name : '' %>"
-                                required
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="base">Base Salary</label>
-                                <input
-                                  type="number"
-                                  id="base"
-                                  name="base"
-                                  class="form-control"
-                                  placeholder="Enter Base Salary"
-                                  value="<%= typeof name != 'undefined' ? name : '' %>"
-                                  required
-                          />
-            </div>
-            <div class="form-group">
-                <label for="hra">HRA</label>
-                <input
-                  type="number"
-                  id="hra"
-                  name="hra"
-                  class="form-control"
-                  placeholder="Enter HRA"
-                  value="<%= typeof name != 'undefined' ? name : '' %>"
-                  required
-                  />
-              </div>
-              <div class="form-group">
-                  <label for="da">DA</label>
-                  <input
-                    type="number"
-                    id="da"
-                    name="da"
-                    class="form-control"
-                    placeholder="Enter DA"
-                    value="<%= typeof name != 'undefined' ? name : '' %>"
-                    required
-                    />
-                </div>  
-                <div class="form-group">
-                    <label for="ma">MA</label>
-                    <input
-                      type="number"
-                      id="ma"
-                      name="ma"
-                      class="form-control"
-                      placeholder="Enter MA"
-                      value="<%= typeof name != 'undefined' ? name : '' %>"
-                      required
-                      />
-                  </div>
-                  <div>
-                      <h3>Deduction Details</h3>
-                    </div>
-                  <div class="form-group">
-                      <label for="did">Deduction Id.</label>
-                      <input
-                        type="number"
-                        id="did"
-                        name="did"
-                        class="form-control"
-                        placeholder="Enter DId."
-                        value="<%= typeof name != 'undefined' ? name : '' %>"
-                        required
-                        />
-                    </div>    
-                    <div class="form-group">
-                        <label for="tax">Tax Deduction</label>
-                        <input
-                          type="number"
-                          id="tax"
-                          name="tax"
-                          class="form-control"
-                          placeholder="Enter Tax"
-                          value="<%= typeof name != 'undefined' ? name : '' %>"
-                          required
-                          />
-                      </div>  
-             
-              <div class="form-group">
-                          <label for="leave">Deduction For Leave</label>
-                          <input
-                            type="number"
-                            id="leave"
-                            name="leave"
-                            class="form-control"
-                            placeholder="Enter per day deduction"
-                            value="<%= typeof name != 'undefined' ? name : '' %>"
-                            required
-                            />
-                </div>
-                <div class="form-group">
-                    <label for="pf">Provident Fund</label>
-                    <input
-                      type="number"
-                      id="pf"
-                      name="pf"
-                      class="form-control"
-                      placeholder="Enter PF"
-                      value="<%= typeof name != 'undefined' ? name : '' %>"
-                      required
-                      />
-                  </div>
-                  <div class="form-group">
-                      <label for="wf">Welfare Fund</label>
-                      <input
-                        type="number"
-                        id="wf"
-                        name="wf"
-                        class="form-control"
-                        placeholder="Enter WF"
-                        value="<%= typeof name != 'undefined' ? name : '' %>"
-                        required
-                        />
-                    </div> 
-                    <div class="form-group">
-                        <label for="loan">Loan Deduction</label>
-                        <input
-                          type="number"
-                          id="loan"
-                          name="loan"
-                          class="form-control"
-                          placeholder="Enter Laon Deduction"
-                          value="<%= typeof name != 'undefined' ? name : '' %>"
-                          required
-                          />
-                      </div>
-                      <div class="form-group">
-                          <label for="bus">Hostel/Bus Charges</label>
-                          <input
-                            type="number"
-                            id="bus"
-                            name="bus"
-                            class="form-control"
-                            placeholder="Enter Hostel/Bus Charges"
-                            value="<%= typeof name != 'undefined' ? name : '' %>"
-                            required
-                            />
-                        </div>           
-            
-            <button type="submit" class="btn btn-primary btn-block">
-              Register
-            </button>
-          </form>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> Register Employee
+      </h1>
+      <%-include('messages')%>
+      <form action="/admin/register" method="POST">
+        <div>
+          <h3>Login Details</h3>
         </div>
-      </div>
+        <div class="form-group">
+          <label for="uname">User Name</label>
+          <input
+            type="text"
+            id="uname"
+            name="uname"
+            class="form-control"
+            placeholder="Enter User Name"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+            required
+          />
+        </div>
+        <div>
+          <h3>Personal Detail</h3>
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="name"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="eid">Employee Id.</label>
+          <input
+            type="number"
+            id="eid"
+            name="eid"
+            class="form-control"
+            placeholder="Enter EId."
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <!-- <input
+            type="text"
+            id="gender"
+            name="gender"
+            class="form-control"
+            placeholder="Enter Gender"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          /> -->
+          <select class="form-control" id="gender" name="gender">
+            <option value=""></option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            class="form-control"
+            placeholder="Enter Date of Birth"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="doj">Date of Joining</label>
+          <input
+            type="date"
+            id="doj"
+            name="doj"
+            class="form-control"
+            placeholder="Enter Date of Joining"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone No.</label>
+          <input
+            type="number"
+            id="phone"
+            name="phone"
+            class="form-control"
+            placeholder="Enter Phone"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            class="form-control"
+            placeholder="Enter Address"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="dno">Department in Phycical Science</label>
+          <!-- <input
+            type="number"
+            id="dno"
+            name="dno"
+            class="form-control"
+            placeholder="Enter Department No."
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          /> -->
+          <select class="form-control" id="dno" name="dno">
+            <option value=""></option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Mathematics & Industrial Mathematics">
+              Mathematics & Industrial Mathematics
+            </option>
+            <option value="Statistics">Statistics</option>
+            <option value="Chemistry and Industrial Chemistry">
+              Chemistry and Industrial Chemistry
+            </option>
+            <option value="Physics and Industrial Physics">
+              Physics and Industrial Physics
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="designation">Designation</label>
+          <!-- <input
+            type="text"
+            id="designation"
+            name="designation"
+            class="form-control"
+            placeholder="Enter Designation"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          /> -->
+          <select class="form-control" id="designation" name="designation">
+            <option value=""></option>
+            <option value="Associate Professor">Associate Professor</option>
+            <option value="Professor">Professor</option>
+            <option value="Senior Lecturer">Senior Lecturer</option>
+            <option value="Lecturer II">Lecturer II</option>
+            <option value="Asst. Lecturer">Asst. Lecturer</option>
+            <option value="Chief Technologist">Chief Technologist</option>
+            <option value="Senior Technologist">Senior Technologist</option>
+            <option value="Technologist I">Technologist I</option>
+            <option value="Snr. Laboratory Superintenden">
+              Snr. Laboratory Superintenden
+            </option>
+            <option value="Snr. Lab. Superviso">Snr. Lab. Superviso</option>
+            <option value="Lab. Assistant">Lab. Assistant</option>
+            <option value="Laboratory Attendant">Laboratory Attendant</option>
+            <option value="Chief Sec. Assistant">Chief Sec. Assistant</option>
+            <option value="Higher Exec.Officer">Higher Exec.Officer</option>
+            <option value="Senior Clerical Officer">
+              Senior Clerical Officer
+            </option>
+            <option value="Head Office Assistant">Head Office Assistant</option>
+          </select>
+        </div>
+        <div>
+          <h3>Salary</h3>
+        </div>
+        <div class="form-group">
+          <label for="sid">Salary Id.</label>
+          <input
+            type="number"
+            id="sid"
+            name="sid"
+            class="form-control"
+            placeholder="Enter SId."
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="base">Base Salary</label>
+          <input
+            type="number"
+            id="base"
+            name="base"
+            class="form-control"
+            placeholder="Enter Base Salary"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="hra">HRA</label>
+          <input
+            type="number"
+            id="hra"
+            name="hra"
+            class="form-control"
+            placeholder="Enter HRA"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="da">DA</label>
+          <input
+            type="number"
+            id="da"
+            name="da"
+            class="form-control"
+            placeholder="Enter DA"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="ma">MA</label>
+          <input
+            type="number"
+            id="ma"
+            name="ma"
+            class="form-control"
+            placeholder="Enter MA"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div>
+          <h3>Deduction Details</h3>
+        </div>
+        <div class="form-group">
+          <label for="did">Deduction Id.</label>
+          <input
+            type="number"
+            id="did"
+            name="did"
+            class="form-control"
+            placeholder="Enter DId."
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tax">Tax Deduction</label>
+          <input
+            type="number"
+            id="tax"
+            name="tax"
+            class="form-control"
+            placeholder="Enter Tax"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="leave">Deduction For Leave</label>
+          <input
+            type="number"
+            id="leave"
+            name="leave"
+            class="form-control"
+            placeholder="Enter per day deduction"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="pf">Provident Fund</label>
+          <input
+            type="number"
+            id="pf"
+            name="pf"
+            class="form-control"
+            placeholder="Enter PF"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="wf">Welfare Fund</label>
+          <input
+            type="number"
+            id="wf"
+            name="wf"
+            class="form-control"
+            placeholder="Enter WF"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="loan">Loan Deduction</label>
+          <input
+            type="number"
+            id="loan"
+            name="loan"
+            class="form-control"
+            placeholder="Enter Laon Deduction"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="bus">Hostel/Bus Charges</label>
+          <input
+            type="number"
+            id="bus"
+            name="bus"
+            class="form-control"
+            placeholder="Enter Hostel/Bus Charges"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
     </div>
+  </div>
+</div>
